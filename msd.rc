@@ -1,0 +1,37 @@
+/* Resource script Designed by Kikomeko Marvin */
+#include <windows.h>
+#include "msd.h"
+
+HWND_ICO ICON "img\\settings.ico"
+
+MSDBUI_MENU MENU
+{
+  POPUP "File"
+  {
+    MENUITEM "Connect", MSDBUI_DB_CONNECT 
+    MENUITEM SEPARATOR
+    MENUITEM "Exit", MSDBUI_EXIT
+  }
+  
+  MENUITEM "SQL FORM", IDC_SQL_INSERTDATA
+  
+  MENUITEM "Relist", MEN_REST
+  
+  POPUP "Help"
+  {
+    MENUITEM "About", MSDBUI_ABOUT
+  }
+}
+
+ABOUT_DLG DIALOG DISCARDABLE 150, 150, 178, 106
+STYLE DS_MODALFRAME|WS_CAPTION|WS_SYSMENU
+CAPTION "MS DBPRESENTATION"
+FONT 8, "MS Shell Dlg"
+{
+  CONTROL HWND_ICO, HWND_ICO, "Static", SS_ICON|WS_TABSTOP, 8, 14, 20, 20, WS_EX_TRANSPARENT
+  CONTROL "DBPRESENTATION VER INFO", IDC_STATIC, "Button", BS_GROUPBOX, 35, 30, 110, 35
+  CONTROL "Version: 1.0.0.*.", IDC_STA_O, "Static", WS_GROUP, 45, 44, 95, 9
+  CONTROL "OK", IDOK, "Button", WS_TABSTOP, 64, 84, 45, 15
+}
+
+MSDBUI_MAN MANIFEST "msdbui.exe.manifest"
